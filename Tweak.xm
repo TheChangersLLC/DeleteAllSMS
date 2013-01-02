@@ -1,6 +1,5 @@
 #import <ChatKit/ChatKit.h>
 
-
 %hook CKConversationListController
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -17,6 +16,7 @@
 		[compose release];
 	}
 }
+
 %new
 - (void)deleteAll:(id)sender {
 	CKConversationList *list = MSHookIvar<CKConversationList *>(self, "_conversationList");
